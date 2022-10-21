@@ -21,11 +21,11 @@ def lista_notas():
             print("Tiene que ser un número.")
         
     return lst1
-        
+
 #Realizo la media        
 lst1=lista_notas()
 
-def media():
+def NotaMedia():
     res=0
     for i in lst1:
         res=res+i
@@ -34,13 +34,14 @@ def media():
     return media
 
 print("Sus notas son:",lst1)
-
-print("La nota media es:",media())
+print("La nota media es:",NotaMedia())
 
 #Busco la nota más alta
 
 def notaMasAlta(lst):
     return max (lst)
+
+#Busco la nota más baja
 
 def notaMasBaja(lst):
     return min(lst)
