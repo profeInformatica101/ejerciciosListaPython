@@ -8,20 +8,23 @@ la nota más alta que ha sacado y la menor.
 
 def lista_notas():
     lst1=[]
-    notas=0
-    while(notas<5):
-        cadena=float(input("Dime tu nota: "))
-        if(notas<=10):
-            lst1.append(cadena)
-            notas +=1
-        else:
-            print ("La nota",cadena,"no es correcta.")
+    notasTotal=0
+    while(notasTotal<5):
+        try:
+            nota=float(input("Dime tu nota: "))
+            if(nota<=10):
+                lst1.append(nota)
+                notasTotal +=1
+            else:
+                print ("La nota",nota,"no es correcta.")
+        except:
+            print("Tiene que ser un número.")
         
     return lst1
-
         
 #Realizo la media        
 lst1=lista_notas()
+
 def media():
     res=0
     for i in lst1:
