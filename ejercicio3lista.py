@@ -10,9 +10,12 @@ def lista_notas():
     lst1=[]
     notas=0
     while(notas<5):
-        cadena=int(input("Dime tu nota: "))
-        notas +=1
-        lst1.append(cadena)
+        cadena=float(input("Dime tu nota: "))
+        if(notas<=10):
+            lst1.append(cadena)
+            notas +=1
+        else:
+            print ("La nota",cadena,"no es correcta.")
         
     return lst1
 
@@ -27,24 +30,19 @@ def media():
         
     return media
 
-#print("Sus notas son:",lst1,"La nota media es:",media())
+print("Sus notas son:",lst1)
+
+print("La nota media es:",media())
+
 #Busco la nota más alta
 
-def nota_alta_baja():
-    for i in lst1:
-        alta=0
-        baja=11
-        contador=0
-        while(contadro<5):
-            if(alta<i):
-                alta=i
-                
-            if(baja>i):
-                baja=i
-    
-    
+def notaMasAlta(lst):
+    return max (lst)
 
-
+def notaMasBaja(lst):
+    return min(lst)
     
-      
+print("Su nota más alta es:",notaMasAlta(lst1))
 
+print("Su nota más baja es:", notaMasBaja(lst1))
+        
