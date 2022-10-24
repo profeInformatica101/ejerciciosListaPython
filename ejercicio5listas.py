@@ -14,7 +14,7 @@ def lista_aleatorio():
         lst.append (random.randint(0,20))
     return lst
 
-#La ordeno de mayor a menor.
+#La ordeno de menor a mayor.
 
 lst1=lista_aleatorio()
 def lista_orden():
@@ -25,6 +25,3 @@ def lista_orden():
 print(lst1)
 print(lista_orden())
     
-    
-        
-
