@@ -42,7 +42,7 @@ def diasminimos(lst_temp):
     print(mintodos)
     lstDias=[]
     for i in range(0,len(lst_temp)):
-        if (mintodos==lst_temp[i]):
+        if (mintodos==lst_temp[i][0]):
             print("test")
             lstDias.append(i+1)
     return lstDias
