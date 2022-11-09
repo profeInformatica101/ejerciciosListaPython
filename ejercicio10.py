@@ -117,3 +117,39 @@ Ejemplo
 A = [[-3, 7, 5],[1, -2, 3],[2, -12, 4]]
 A_T = [[-3, 1, 2],[7, -2,-12],[5, 3, 4]]
 '''
+
+
+matriz_a = [[2,0,1],[3,0,0],[5,1,1]]
+matriz_b = [[1,0,1],[1,2,1],[1,1,0]]
+
+'''Función auxiliar que obtiene una columna'''
+def obtenerVectorColumna(n, matriz):
+    vector = []
+    for i in range(0, len(matriz)):
+        vector.append(matriz[i][n])
+    return vector
+
+
+#print(obtenerVectorColumna(2, matriz_a))
+
+'''
+Realiza la multiplicación de matrices
+'''
+def multiplicaMatrices(m1, m2):
+    matriz = []
+    for i in m1:
+        vector = []
+        for j in range(0, len(m2)):
+            vect_aux = obtenerVectorColumna(j, m2)
+            vector.append(auxVectoresMultSuma(i, vect_aux))
+        matriz.append(vector)
+    return matriz
+
+'''
+Función auxiliar que realiza la multiplicación y suma con dos vectores
+'''
+def auxVectoresMultSuma(vect1, vect2):
+    aux = 0
+    for i in range(0, len(vect1)):
+        aux += vect1[i] * vect2[i]
+    return aux
