@@ -97,19 +97,6 @@ def productoNumeromatriz(matriz):
 #print(matriz_random)
 #print(productoNumeromatriz(matriz_random))
 
-matriz_a = [[2,0,1],[3,0,0],[5,1,1]]
-matriz_b = [[1,0,1],[1,2,1],[1,1,0]]
-
-def multiplicaMatrices(mat1, mat2):
-    pass
-
-'''
-for i in range(0, len(matriz_a)):
-    for j in range(0, len(matriz_a[i])):
-        print(matriz_a[i][j])
-'''
-
-
 
 '''Realiza la Matriz Transpuesta.
 Ejemplo
@@ -119,37 +106,45 @@ A_T = [[-3, 1, 2],[7, -2,-12],[5, 3, 4]]
 '''
 
 
+'''
+MULTIPLICACIÓN DE MATRICES
+'''
 matriz_a = [[2,0,1],[3,0,0],[5,1,1]]
 matriz_b = [[1,0,1],[1,2,1],[1,1,0]]
 
-'''Función auxiliar que obtiene una columna'''
-def obtenerVectorColumna(n, matriz):
+'''
+Función auxiliar que devuelve una columna dada una posición y una matriz
+'''
+def obtenerColumnaMatriz(pos, matriz):
     vector = []
     for i in range(0, len(matriz)):
-        vector.append(matriz[i][n])
+        vector.append(matriz[i][pos])
     return vector
 
+#print(obtenerColumnaMatriz(1, matriz_b)) #devolverá [0,2,1]
 
-#print(obtenerVectorColumna(2, matriz_a))
+def auxVectoresSumaMult(vect1, vect2):
+    aux_total = 0
+    for i in range(0, len(vect2)):
+        aux_total += vect1[i] * vect2[i]
+    return aux_total
 
-'''
-Realiza la multiplicación de matrices
-'''
-def multiplicaMatrices(m1, m2):
+
+def sumaTotalVector(vec1):
+    res = 0
+    for i in vec1:
+        res = res + i
+    return res
+
+def multMatrices(matriz1, matriz2):
     matriz = []
-    for i in m1:
+    for i in matriz1:
         vector = []
-        for j in range(0, len(m2)):
-            vect_aux = obtenerVectorColumna(j, m2)
-            vector.append(auxVectoresMultSuma(i, vect_aux))
+        for j in range(0, len(matriz2)):
+            vect_aux = obtenerColumnaMatriz(j, matriz2)
+            vector.append(auxVectoresSumaMult(i,vect_aux ))
         matriz.append(vector)
     return matriz
 
-'''
-Función auxiliar que realiza la multiplicación y suma con dos vectores
-'''
-def auxVectoresMultSuma(vect1, vect2):
-    aux = 0
-    for i in range(0, len(vect1)):
-        aux += vect1[i] * vect2[i]
-    return aux
+
+
